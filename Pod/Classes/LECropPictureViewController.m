@@ -126,12 +126,12 @@ static const CGFloat toolbarHeight = 44;
 {
     if (self.photoAcceptedBlock) {
         UIImage *croppedImage = [self.image cropImageInRect:self.overlay.cropView.frame forParentBound:self.overlay.bounds];
-        
+        UIImage *originCroppedImage = croppedImage;
         if(self.cropPictureType == LECropPictureTypeRounded) {
             croppedImage = [croppedImage imageWithRoundedBounds];
         }
         
-        self.photoAcceptedBlock(croppedImage);
+        self.photoAcceptedBlock(croppedImage, originCroppedImage);
     }
     
     [self dismissViewControllerAnimated:YES completion:nil];

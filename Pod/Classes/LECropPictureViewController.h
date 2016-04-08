@@ -73,7 +73,7 @@ typedef NS_ENUM(NSUInteger, LECropPictureType) {
  
  @param croppedPicture The cropped image (as circle or square) returned by the controller.
  */
-@property(copy) void(^photoAcceptedBlock)(UIImage *croppedPicture);
+@property(copy) void(^photoAcceptedBlock)(UIImage *croppedPicture, UIImage *originCroppedPicture);
 
 
 /**
